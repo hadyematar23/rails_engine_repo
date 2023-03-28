@@ -1,0 +1,157 @@
+{
+  "RSpec": {
+    "coverage": {
+      "/Users/hadymatar/turing_work/3Mod/solo_project/rails-engine/app/models/merchant.rb": {
+        "lines": [
+          1,
+          1,
+          null
+        ]
+      },
+      "/Users/hadymatar/turing_work/3Mod/solo_project/rails-engine/app/models/application_record.rb": {
+        "lines": [
+          1,
+          1,
+          null
+        ]
+      },
+      "/Users/hadymatar/turing_work/3Mod/solo_project/rails-engine/app/models/item.rb": {
+        "lines": [
+          1,
+          1,
+          null
+        ]
+      },
+      "/Users/hadymatar/turing_work/3Mod/solo_project/rails-engine/app/controllers/Api/V1/items_controller.rb": {
+        "lines": [
+          1,
+          1,
+          1,
+          null,
+          1,
+          null,
+          1,
+          1,
+          1,
+          null,
+          null,
+          null,
+          null,
+          null
+        ]
+      },
+      "/Users/hadymatar/turing_work/3Mod/solo_project/rails-engine/app/controllers/application_controller.rb": {
+        "lines": [
+          1,
+          null
+        ]
+      },
+      "/Users/hadymatar/turing_work/3Mod/solo_project/rails-engine/app/serializers/item_serializer.rb": {
+        "lines": [
+          1,
+          1,
+          1,
+          null
+        ]
+      },
+      "/Users/hadymatar/turing_work/3Mod/solo_project/rails-engine/app/channels/application_cable/channel.rb": {
+        "lines": [
+          0,
+          0,
+          0,
+          0
+        ],
+        "branches": {
+        }
+      },
+      "/Users/hadymatar/turing_work/3Mod/solo_project/rails-engine/app/channels/application_cable/connection.rb": {
+        "lines": [
+          0,
+          0,
+          0,
+          0
+        ],
+        "branches": {
+        }
+      },
+      "/Users/hadymatar/turing_work/3Mod/solo_project/rails-engine/app/controllers/Api/V1/merchants_controller.rb": {
+        "lines": [
+          0,
+          0,
+          0,
+          null,
+          0,
+          0,
+          0,
+          null,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          null,
+          null,
+          null
+        ],
+        "branches": {
+        }
+      },
+      "/Users/hadymatar/turing_work/3Mod/solo_project/rails-engine/app/jobs/application_job.rb": {
+        "lines": [
+          0,
+          null,
+          null,
+          null,
+          null,
+          null,
+          0
+        ],
+        "branches": {
+        }
+      },
+      "/Users/hadymatar/turing_work/3Mod/solo_project/rails-engine/app/mailers/application_mailer.rb": {
+        "lines": [
+          0,
+          0,
+          0,
+          0
+        ],
+        "branches": {
+        }
+      },
+      "/Users/hadymatar/turing_work/3Mod/solo_project/rails-engine/app/models/customer.rb": {
+        "lines": [
+          0,
+          null,
+          0
+        ],
+        "branches": {
+        }
+      },
+      "/Users/hadymatar/turing_work/3Mod/solo_project/rails-engine/app/models/transaction.rb": {
+        "lines": [
+          0,
+          0
+        ],
+        "branches": {
+        }
+      },
+      "/Users/hadymatar/turing_work/3Mod/solo_project/rails-engine/app/serializers/merchant_serializer.rb": {
+        "lines": [
+          0,
+          0,
+          0,
+          0
+        ],
+        "branches": {
+        }
+      }
+    },
+    "timestamp": 1679965080
+  }
+}
