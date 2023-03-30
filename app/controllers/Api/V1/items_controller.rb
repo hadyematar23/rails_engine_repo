@@ -6,20 +6,18 @@ module Api
         if params[:merchant_id]
           begin
             render json: ItemSerializer.new(Merchant.find(params[:merchant_id]).items)
-          rescue ActiveRecord::RecordNotFound
-            render json: ErrorSerializer.new("Merchant not found").serialize_json, status: :not_found
+          rescue ActiveRecord::RecordNotFound => exception
+            render json: ErrorSerializer.new(exception.message).serialize_json, status: 404
           end
         else 
           render json: ItemSerializer.new(Item.all)
         end 
       end
-
+      
       def show
-        begin 
           render json: ItemSerializer.new(Item.find(params[:id]))
-        rescue ActiveRecord::RecordNotFound
-          render json: ErrorSerializer.new("Item not found").serialize_json, status: :not_found
-        end
+        rescue ActiveRecord::RecordNotFound => exception 
+          render json: ErrorSerializer.new(exception.message).serialize_json, status: 404
       end
 
       def create
@@ -37,8 +35,8 @@ module Api
           invoice = item.find_invoices_to_destroy 
           invoice.each { |invoice| invoice.destroy }
           item.destroy
-        rescue ActiveRecord::RecordNotFound
-          render json: ErrorSerializer.new("Item not found and therefore could not be deleted").serialize_json, status: :not_found
+        rescue ActiveRecord::RecordNotFound => exception
+          render json: ErrorSerializer.new(exception.message).serialize_json, status: :not_found
         end
       end
 
