@@ -65,7 +65,7 @@ RSpec.describe "Items", type: :request do
       parsed_items = JSON.parse(response.body, symbolize_names: true)
       
       expect(response).to have_http_status(404)
-      expect(parsed_items[:errors].first[:message]).to eq("Item not found")
+      expect(parsed_items[:errors].first[:message]).to eq("Couldn't find Item with 'id'=#{Item.all.last.id+1}")
       
     end
 
@@ -77,7 +77,7 @@ RSpec.describe "Items", type: :request do
       parsed_items = JSON.parse(response.body, symbolize_names: true)
       
       expect(response).to have_http_status(404)
-      expect(parsed_items[:errors].first[:message]).to eq("Item not found")
+      expect(parsed_items[:errors].first[:message]).to eq("Couldn't find Item with 'id'=test")
       
     end
 
@@ -231,7 +231,7 @@ RSpec.describe "Items", type: :request do
 
       expect(Item.all.count).to eq(3)
       response_body = JSON.parse(response.body, symbolize_names: true)
-      expect(response_body[:errors].first[:message]).to eq("Item not found and therefore could not be deleted")
+      expect(response_body[:errors].first[:message]).to eq("Couldn't find Item with 'id'=#{Item.all.last.id+1}")
       expect(response.status).to eq(404)
     end 
 
