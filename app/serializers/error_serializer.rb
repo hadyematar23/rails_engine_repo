@@ -1,12 +1,18 @@
 class ErrorSerializer
   include JSONAPI::Serializer
-  attributes 
-
-  def self.price
-    {errors: "Price Cannot be Less than 0 (Zero)"}
+  
+  def initialize(error_message)
+    @error_message = error_message
   end
 
-  def self.too_much_params
-    {errors: "Cannot search by price and name"}
+  def serialize_json
+    {
+      data: {
+        id: nil, 
+        type: "error_message", 
+        errors: @error_message, 
+        attributes: {}
+      }
+    }
   end
 end

@@ -153,7 +153,7 @@ RSpec.describe "Finds_items", type: :request do
         get "/api/v1/items/find_all?max_price=-15"
         parsed_items = JSON.parse(response.body, symbolize_names: true)
         expect(response.status).to be(400)
-        expect(parsed_items[:errors]).to eq("Price Cannot be Less than 0 (Zero)")
+        expect(parsed_items[:data][:errors]).to eq("Price Cannot be Less than 0 (Zero)")
 
       end
 
@@ -166,7 +166,7 @@ RSpec.describe "Finds_items", type: :request do
         get "/api/v1/items/find_all?min_price=-15"
         parsed_items = JSON.parse(response.body, symbolize_names: true)
         expect(response.status).to be(400)
-        expect(parsed_items[:errors]).to eq("Price Cannot be Less than 0 (Zero)")
+        expect(parsed_items[:data][:errors]).to eq("Price Cannot be Less than 0 (Zero)")
 
       end
 
@@ -179,7 +179,7 @@ RSpec.describe "Finds_items", type: :request do
         get "/api/v1/items/find_all?min_price=5&name=tacos"
         parsed_items = JSON.parse(response.body, symbolize_names: true)
         expect(response.status).to be(400)
-        expect(parsed_items[:errors]).to eq("Cannot search by price and name")
+        expect(parsed_items[:data][:errors]).to eq("Cannot search by price and name")
 
       end
 
@@ -192,7 +192,20 @@ RSpec.describe "Finds_items", type: :request do
         get "/api/v1/items/find_all?max_price=5&name=tacos"
         parsed_items = JSON.parse(response.body, symbolize_names: true)
         expect(response.status).to be(400)
-        expect(parsed_items[:errors]).to eq("Cannot search by price and name")
+        expect(parsed_items[:data][:errors]).to eq("Cannot search by price and name")
+
+      end
+
+      it "if you are seeking to find all items but input no param, you get an error" do 
+        create(:item, unit_price: 3.54, name: "computer")
+        create(:item, unit_price: 12.00, name: "wallet")
+        create(:item, unit_price: 18.23, name: "trousers")
+        create(:item, unit_price: 20.45, name: "desk")
+
+        get "/api/v1/items/find_all"
+        parsed_items = JSON.parse(response.body, symbolize_names: true)
+        expect(response.status).to be(400)
+        expect(parsed_items[:data][:errors]).to eq("You did not input any items to search for")
 
       end
     end

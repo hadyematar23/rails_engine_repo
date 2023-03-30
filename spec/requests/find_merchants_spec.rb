@@ -74,7 +74,30 @@ RSpec.describe "Find_merchants", type: :request do
       expect(parsed_merchant).to have_key(:data)
 
       expect(parsed_merchant[:data]).to be_empty
+    end
 
+    it "edgecase - no parameter given will return error" do 
+      create(:merchant, name: "Pahady")
+      create(:merchant, name: "Hady")
+      create(:merchant, name: "Malena")
+
+      get "/api/v1/merchants/find"
+      parsed_merchant = JSON.parse(response.body, symbolize_names: true)
+      expect(response).to have_http_status(400)
+      expect(parsed_merchant).to be_a(Hash)
+      expect(parsed_merchant[:data][:errors]).to eq("You need to actually search for a merchant")
+    end
+
+    it "edgecase - parameter provided is empty" do 
+      create(:merchant, name: "Pahady")
+      create(:merchant, name: "Hady")
+      create(:merchant, name: "Malena")
+
+      get "/api/v1/merchants/find?name="
+      parsed_merchant = JSON.parse(response.body, symbolize_names: true)
+      expect(response).to have_http_status(400)
+      expect(parsed_merchant).to be_a(Hash)
+      expect(parsed_merchant[:data][:errors]).to eq("Please input a valid search.")
     end
   end 
 end 

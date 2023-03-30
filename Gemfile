@@ -44,6 +44,7 @@ group :development, :test do
   gem "factory_bot_rails"
   gem "faker"
   gem 'pry'
+  gem 'simplecov'
 end
 
 group :development do
@@ -52,6 +53,6 @@ group :development do
 end
 
 group :test do 
-  gem 'simplecov', require: false
+  
 end 
 

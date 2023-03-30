@@ -43,6 +43,49 @@ RSpec.describe Item, type: :model do
 
       expect(result).to match_array([Item.first, Item.second])
     end
+
+    it "searches for and returns all items where the minimum price is equal to or greater than the query" do 
+      create(:item, unit_price: 3.54)
+      create(:item, unit_price: 11.23, name: "shoes")
+      create(:item, unit_price: 12.00, name: "wallet")
+      create(:item, unit_price: 18.23, name: "trousers")
+
+      query = 11.23
+
+      results = Item.return_with_min_price(query)
+      
+      expect(results).to match_array([Item.second, Item.third, Item.fourth])
+
+    end
+
+    it "searches for and returns all items where the maximum price is equal to or less than the query" do 
+      create(:item, unit_price: 3.54)
+      create(:item, unit_price: 11.23, name: "shoes")
+      create(:item, unit_price: 12.00, name: "wallet")
+      create(:item, unit_price: 18.23, name: "trousers")
+
+      query = 12.00
+
+      results = Item.return_with_max_price(query)
+      
+      expect(results).to match_array([Item.first, Item.second, Item.third])
+
+    end
+
+    it "searches for and returns all items where the items' prices are between the max price and the min price" do 
+      create(:item, unit_price: 3.54)
+      create(:item, unit_price: 11.23, name: "shoes")
+      create(:item, unit_price: 12.00, name: "wallet")
+      create(:item, unit_price: 18.23, name: "trousers")
+
+      min_price = 11.00
+      max_price = 12.00
+
+      results = Item.return_between_both_prices(min_price, max_price)
+      
+      expect(results).to match_array([Item.second, Item.third])
+
+    end
   end
 end
 

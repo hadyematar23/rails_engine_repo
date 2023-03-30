@@ -65,8 +65,8 @@ RSpec.describe "Items", type: :request do
       parsed_items = JSON.parse(response.body, symbolize_names: true)
       
       expect(response).to have_http_status(404)
-      expect(parsed_items).to have_key(:error)
-      expect(parsed_items[:error]).to eq("Item not found")
+      expect(parsed_items[:data]).to have_key(:errors)
+      expect(parsed_items[:data][:errors]).to eq("Item not found")
       
     end
 
@@ -78,8 +78,8 @@ RSpec.describe "Items", type: :request do
       parsed_items = JSON.parse(response.body, symbolize_names: true)
       
       expect(response).to have_http_status(404)
-      expect(parsed_items).to have_key(:error)
-      expect(parsed_items[:error]).to eq("Item not found")
+      expect(parsed_items[:data]).to have_key(:errors)
+      expect(parsed_items[:data][:errors]).to eq("Item not found")
       
     end
 
@@ -131,7 +131,7 @@ RSpec.describe "Items", type: :request do
       response_body = JSON.parse(response.body, symbolize_names: true)
       expect(response).to have_http_status(422)
       expect(Item.all.count).to eq(1)
-      expect(response_body[:error]).to include { |error_message| error_message.include?("Unit price is not valid. Make sure it is a number with a decimal point") }
+      expect(response_body[:data][:errors]).to eq("Unit price is not valid. Make sure it is a number with a decimal point") 
     end
 
     it "sad path- create item- attribute types not correct as name is integer and not a string" do 
@@ -151,7 +151,7 @@ RSpec.describe "Items", type: :request do
       response_body = JSON.parse(response.body, symbolize_names: true)
       expect(response).to have_http_status(422)
       expect(Item.all.count).to eq(1)
-      expect(response_body[:error]).to include { |error_message| error_message.include?("Name is not valid") }
+      expect(response_body[:data][:errors]).to eq("Name is not valid") 
     end
 
     it "sad path- create item- attribute types not correct as name is integer and not a string" do 
@@ -170,7 +170,7 @@ RSpec.describe "Items", type: :request do
       response_body = JSON.parse(response.body, symbolize_names: true)
       expect(response).to have_http_status(422)
       expect(Item.all.count).to eq(12)
-      expect(response_body[:error]).to include { |error_message| error_message.include?("Description is not valid") }
+      expect(response_body[:data][:errors]).to eq("Description is not valid")
     end
 
     it "edge case- create item- attributes are missing (nil)" do 
@@ -189,7 +189,7 @@ RSpec.describe "Items", type: :request do
       response_body = JSON.parse(response.body, symbolize_names: true)
       expect(response).to have_http_status(422)
       expect(Item.all.count).to eq(12)
-      expect(response_body[:error]).to include { |error_message| error_message.include?("can't be blank") }
+      expect(response_body[:data][:errors]).to eq("Name can't be blank")
     end
 
     it "delete item" do 
@@ -233,9 +233,7 @@ RSpec.describe "Items", type: :request do
 
       expect(Item.all.count).to eq(3)
       response_body = JSON.parse(response.body, symbolize_names: true)
-
-      expect(response_body[:error]).to eq("Item not found and therefore could not be deleted")
-
+      expect(response_body[:data][:errors]).to eq("Item not found and therefore could not be deleted")
       expect(response.status).to eq(404)
     end 
 
@@ -322,7 +320,7 @@ RSpec.describe "Items", type: :request do
 
       response_body = JSON.parse(response.body, symbolize_names: true)
 
-      expect(response_body[:error]).to eq("Item not found and therefore could not be updated")
+      expect(response_body[:data][:errors]).to eq("Item not found and therefore could not be updated")
 
       expect(response.status).to eq(404)
     end 
@@ -342,7 +340,7 @@ RSpec.describe "Items", type: :request do
 
       response_body = JSON.parse(response.body, symbolize_names: true)
 
-      expect(response_body[:error]).to eq("Item not found and therefore could not be updated")
+      expect(response_body[:data][:errors]).to eq("Item not found and therefore could not be updated")
 
       expect(response.status).to eq(404)
     end 

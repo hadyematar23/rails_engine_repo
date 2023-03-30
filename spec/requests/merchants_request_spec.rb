@@ -43,8 +43,8 @@ RSpec.describe "Merchants", type: :request do
 
       expect(response).to have_http_status(404)
       parsed_merchant = JSON.parse(response.body, symbolize_names: true)
-      expect(parsed_merchant).to have_key(:error)
-      expect(parsed_merchant[:error]).to eq("Merchant not found")
+      expect(parsed_merchant[:data]).to have_key(:errors)
+      expect(parsed_merchant[:data][:errors]).to eq("Merchant not found")
 
     end 
 
@@ -95,8 +95,8 @@ RSpec.describe "Merchants", type: :request do
       get "/api/v1/merchants/#{Merchant.last.id+1}/items"
       parsed_items = JSON.parse(response.body, symbolize_names: true)
       expect(response).to have_http_status(404)
-      expect(parsed_items).to have_key(:error)
-      expect(parsed_items[:error]).to eq("Merchant not found")
+      expect(parsed_items[:data]).to have_key(:errors)
+      expect(parsed_items[:data][:errors]).to eq("Merchant not found")
     end
   end
 end

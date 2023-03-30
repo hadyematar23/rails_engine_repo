@@ -7,7 +7,7 @@ module Api
           begin
             render json: ItemSerializer.new(Merchant.find(params[:merchant_id]).items)
           rescue ActiveRecord::RecordNotFound
-            render json: { error: "Merchant not found" }, status: :not_found
+            render json: ErrorSerializer.new("Merchant not found").serialize_json, status: :not_found
           end
         else 
           render json: ItemSerializer.new(Item.all)
@@ -18,7 +18,7 @@ module Api
         begin 
           render json: ItemSerializer.new(Item.find(params[:id]))
         rescue ActiveRecord::RecordNotFound
-          render json: { error: "Item not found" }, status: :not_found
+          render json: ErrorSerializer.new("Item not found").serialize_json, status: :not_found
         end
       end
 
@@ -27,9 +27,7 @@ module Api
         if item.save
           render json: ItemSerializer.new(Item.all.last), status: 201
         else  
-          render json: {
-            error: item.errors.full_messages, 
-          }, status: 422
+          render json: ErrorSerializer.new(item.errors.full_messages.first).serialize_json, status: 422
         end
       end
 
@@ -39,16 +37,15 @@ module Api
           invoice = item.find_invoices_to_destroy 
           invoice.each { |invoice| invoice.destroy }
           item.destroy
-
         rescue ActiveRecord::RecordNotFound
-          render json: { error: "Item not found and therefore could not be deleted" }, status: :not_found
+          render json: ErrorSerializer.new("Item not found and therefore could not be deleted").serialize_json, status: :not_found
         end
       end
 
       def update
         begin
           item = Item.find(params[:id])
-          if item.update(update_item_params)
+          if item.update(new_item_params)
             render json: ItemSerializer.new(Item.find(params[:id]))
           else  
             render json: {
@@ -56,17 +53,13 @@ module Api
             }, status: 404
           end 
         rescue ActiveRecord::RecordNotFound
-          render json: { error: "Item not found and therefore could not be updated" }, status: 404
+          render json: ErrorSerializer.new("Item not found and therefore could not be updated").serialize_json, status: :not_found
         end 
       end
 
       private 
 
       def new_item_params
-        params.permit(:name, :description, :unit_price, :merchant_id,)
-      end
-
-      def update_item_params
         params.permit(:name, :description, :unit_price, :merchant_id,)
       end
 

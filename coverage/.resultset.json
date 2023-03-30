@@ -1,28 +1,268 @@
 {
   "RSpec": {
     "coverage": {
-      "/Users/hadymatar/turing_work/3Mod/solo_project/rails-engine/app/models/invoice_item.rb": {
+      "/Users/hadymatar/turing_work/3Mod/solo_project/rails-engine/config/environment.rb": {
         "lines": [
+          null,
           1,
-          1,
-          1,
-          null
+          null,
+          null,
+          1
         ]
       },
-      "/Users/hadymatar/turing_work/3Mod/solo_project/rails-engine/app/models/application_record.rb": {
+      "/Users/hadymatar/turing_work/3Mod/solo_project/rails-engine/config/application.rb": {
         "lines": [
           1,
-          1,
-          null
-        ]
-      },
-      "/Users/hadymatar/turing_work/3Mod/solo_project/rails-engine/app/models/invoice.rb": {
-        "lines": [
+          null,
           1,
           null,
           1,
           1,
           1,
+          1,
+          1,
+          1,
+          1,
+          1,
+          1,
+          1,
+          null,
+          null,
+          null,
+          null,
+          1,
+          null,
+          1,
+          1,
+          null,
+          1,
+          null,
+          null,
+          null,
+          null,
+          null,
+          null,
+          null,
+          null,
+          null,
+          null,
+          null,
+          null,
+          1,
+          null,
+          null
+        ]
+      },
+      "/Users/hadymatar/turing_work/3Mod/solo_project/rails-engine/config/boot.rb": {
+        "lines": [
+          1,
+          null,
+          1,
+          1
+        ]
+      },
+      "/Users/hadymatar/turing_work/3Mod/solo_project/rails-engine/config/environments/test.rb": {
+        "lines": [
+          1,
+          null,
+          null,
+          null,
+          null,
+          null,
+          null,
+          1,
+          null,
+          null,
+          null,
+          1,
+          null,
+          null,
+          null,
+          null,
+          1,
+          null,
+          null,
+          1,
+          1,
+          null,
+          null,
+          null,
+          null,
+          1,
+          1,
+          1,
+          null,
+          null,
+          1,
+          null,
+          null,
+          1,
+          null,
+          null,
+          1,
+          null,
+          1,
+          null,
+          null,
+          null,
+          null,
+          1,
+          null,
+          null,
+          1,
+          null,
+          null,
+          1,
+          null,
+          null,
+          1,
+          null,
+          null,
+          null,
+          null,
+          null,
+          null,
+          null
+        ]
+      },
+      "/Users/hadymatar/turing_work/3Mod/solo_project/rails-engine/config/initializers/cors.rb": {
+        "lines": [
+          null,
+          null,
+          null,
+          null,
+          null,
+          null,
+          null,
+          null,
+          null,
+          null,
+          null,
+          null,
+          null,
+          null,
+          null,
+          null
+        ]
+      },
+      "/Users/hadymatar/turing_work/3Mod/solo_project/rails-engine/config/initializers/filter_parameter_logging.rb": {
+        "lines": [
+          null,
+          null,
+          null,
+          null,
+          null,
+          1,
+          null,
+          null
+        ]
+      },
+      "/Users/hadymatar/turing_work/3Mod/solo_project/rails-engine/config/initializers/inflections.rb": {
+        "lines": [
+          null,
+          null,
+          null,
+          null,
+          null,
+          null,
+          null,
+          null,
+          null,
+          null,
+          null,
+          null,
+          null,
+          null,
+          null,
+          null
+        ]
+      },
+      "/Users/hadymatar/turing_work/3Mod/solo_project/rails-engine/spec/factories/invoice_items.rb": {
+        "lines": [
+          1,
+          1,
+          1,
+          1,
+          1,
+          1,
+          1,
+          1,
+          null,
+          null,
+          null
+        ]
+      },
+      "/Users/hadymatar/turing_work/3Mod/solo_project/rails-engine/spec/factories/invoices.rb": {
+        "lines": [
+          1,
+          1,
+          1,
+          1,
+          null,
+          null
+        ]
+      },
+      "/Users/hadymatar/turing_work/3Mod/solo_project/rails-engine/spec/factories/items.rb": {
+        "lines": [
+          1,
+          1,
+          1,
+          5,
+          1,
+          1,
+          5,
+          5,
+          null,
+          null
+        ]
+      },
+      "/Users/hadymatar/turing_work/3Mod/solo_project/rails-engine/spec/factories/merchants.rb": {
+        "lines": [
+          1,
+          1,
+          5,
+          5,
+          5,
+          null,
+          null
+        ]
+      },
+      "/Users/hadymatar/turing_work/3Mod/solo_project/rails-engine/config/routes.rb": {
+        "lines": [
+          1,
+          null,
+          null,
+          null,
+          null,
+          null,
+          1,
+          1,
+          1,
+          1,
+          1,
+          null,
+          1,
+          1,
+          1,
+          null,
+          null,
+          null,
+          null,
+          1,
+          1,
+          1,
+          1,
+          null,
+          1,
+          1,
+          null,
+          null,
+          null,
+          null,
+          null,
+          null,
+          null,
+          null,
           null
         ]
       },
@@ -40,16 +280,35 @@
           1,
           null,
           1,
-          3,
+          0,
           null,
           null,
           1,
-          3,
+          0,
           null,
           null,
           1,
-          2,
+          0,
           null,
+          null,
+          1,
+          0,
+          null,
+          null,
+          1,
+          0,
+          null,
+          null,
+          1,
+          0,
+          null,
+          null
+        ]
+      },
+      "/Users/hadymatar/turing_work/3Mod/solo_project/rails-engine/app/models/application_record.rb": {
+        "lines": [
+          1,
+          1,
           null
         ]
       },
@@ -59,11 +318,11 @@
           1,
           null,
           1,
-          3,
+          0,
           null,
           null,
           1,
-          4,
+          0,
           null,
           null
         ]
@@ -73,28 +332,29 @@
           1,
           null,
           1,
-          2,
-          2,
-          1,
+          0,
+          0,
+          0,
+          null,
+          0,
+          null,
+          null,
           null,
           1,
-          null,
-          null,
-          null,
-          1,
-          8,
-          2,
-          6,
-          1,
-          5,
-          2,
-          3,
-          1,
-          2,
           1,
           1,
-          1,
-          null,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
           null,
           null,
           null,
@@ -107,172 +367,17 @@
           null
         ]
       },
-      "/Users/hadymatar/turing_work/3Mod/solo_project/rails-engine/app/serializers/item_find_serializer.rb": {
-        "lines": [
-          1,
-          1,
-          1,
-          null
-        ]
-      },
-      "/Users/hadymatar/turing_work/3Mod/solo_project/rails-engine/app/serializers/no_match_serializer.rb": {
-        "lines": [
-          1,
-          1,
-          null,
-          1,
-          2,
-          null,
-          null,
-          null
-        ]
-      },
-      "/Users/hadymatar/turing_work/3Mod/solo_project/rails-engine/app/controllers/Api/V1/merchants/find_controller.rb": {
-        "lines": [
-          1,
-          null,
-          1,
-          2,
-          null,
-          2,
-          1,
-          null,
-          1,
-          null,
-          null,
-          null,
-          1,
-          3,
-          null,
-          null,
-          null
-        ]
-      },
-      "/Users/hadymatar/turing_work/3Mod/solo_project/rails-engine/app/serializers/merchant_find_serializer.rb": {
-        "lines": [
-          1,
-          1,
-          1,
-          null
-        ]
-      },
       "/Users/hadymatar/turing_work/3Mod/solo_project/rails-engine/app/serializers/error_serializer.rb": {
         "lines": [
           1,
           1,
-          1,
           null,
-          1,
-          2,
-          null,
-          null,
-          1,
-          2,
-          null,
-          null
-        ]
-      },
-      "/Users/hadymatar/turing_work/3Mod/solo_project/rails-engine/app/controllers/Api/V1/items_controller.rb": {
-        "lines": [
-          1,
-          1,
-          1,
-          null,
-          1,
-          3,
-          null,
-          2,
           1,
           1,
           null,
           null,
           1,
           null,
-          null,
-          null,
-          1,
-          null,
-          3,
-          2,
-          2,
-          null,
-          null,
-          null,
-          1,
-          5,
-          5,
-          1,
-          null,
-          4,
-          null,
-          null,
-          null,
-          null,
-          null,
-          1,
-          null,
-          3,
-          2,
-          3,
-          2,
-          null,
-          1,
-          1,
-          null,
-          null,
-          null,
-          1,
-          null,
-          5,
-          3,
-          2,
-          null,
-          1,
-          null,
-          null,
-          null,
-          2,
-          2,
-          null,
-          null,
-          null,
-          1,
-          null,
-          1,
-          5,
-          null,
-          null,
-          1,
-          3,
-          null,
-          null,
-          null,
-          null,
-          null
-        ]
-      },
-      "/Users/hadymatar/turing_work/3Mod/solo_project/rails-engine/app/serializers/item_serializer.rb": {
-        "lines": [
-          1,
-          1,
-          1,
-          null
-        ]
-      },
-      "/Users/hadymatar/turing_work/3Mod/solo_project/rails-engine/app/controllers/Api/V1/merchants_controller.rb": {
-        "lines": [
-          1,
-          1,
-          1,
-          null,
-          null,
-          1,
-          3,
-          1,
-          null,
-          null,
-          2,
-          1,
           1,
           null,
           null,
@@ -283,76 +388,8 @@
           null,
           null
         ]
-      },
-      "/Users/hadymatar/turing_work/3Mod/solo_project/rails-engine/app/serializers/merchant_serializer.rb": {
-        "lines": [
-          1,
-          1,
-          1,
-          null
-        ]
-      },
-      "/Users/hadymatar/turing_work/3Mod/solo_project/rails-engine/app/channels/application_cable/channel.rb": {
-        "lines": [
-          0,
-          0,
-          0,
-          0
-        ],
-        "branches": {
-        }
-      },
-      "/Users/hadymatar/turing_work/3Mod/solo_project/rails-engine/app/channels/application_cable/connection.rb": {
-        "lines": [
-          0,
-          0,
-          0,
-          0
-        ],
-        "branches": {
-        }
-      },
-      "/Users/hadymatar/turing_work/3Mod/solo_project/rails-engine/app/jobs/application_job.rb": {
-        "lines": [
-          0,
-          null,
-          null,
-          null,
-          null,
-          null,
-          0
-        ],
-        "branches": {
-        }
-      },
-      "/Users/hadymatar/turing_work/3Mod/solo_project/rails-engine/app/mailers/application_mailer.rb": {
-        "lines": [
-          0,
-          0,
-          0,
-          0
-        ],
-        "branches": {
-        }
-      },
-      "/Users/hadymatar/turing_work/3Mod/solo_project/rails-engine/app/models/customer.rb": {
-        "lines": [
-          0,
-          null,
-          0
-        ],
-        "branches": {
-        }
-      },
-      "/Users/hadymatar/turing_work/3Mod/solo_project/rails-engine/app/models/transaction.rb": {
-        "lines": [
-          0,
-          0
-        ],
-        "branches": {
-        }
       }
     },
-    "timestamp": 1680120511
+    "timestamp": 1680137600
   }
 }
