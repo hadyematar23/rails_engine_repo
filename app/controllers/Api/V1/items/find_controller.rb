@@ -10,9 +10,7 @@ class Api::V1::Items::FindController < ApplicationController
   end
 
   def index 
-    if params[:nil].nil?
-      render json: ErrorSerializer.new("You did not input any items to search for").serialize_json, status: 400
-    elsif params[:name] && (params[:min_price] || params[:max_price])
+    if params[:name] && (params[:min_price] || params[:max_price])
       render json: ErrorSerializer.new("Cannot search by price and name").serialize_json, status: 400
     elsif params[:name]
       render json: ItemSerializer.new(Item.return_all_items(params[:name]))
@@ -24,6 +22,8 @@ class Api::V1::Items::FindController < ApplicationController
       render json: ItemSerializer.new(Item.return_with_min_price(params[:min_price]))
     elsif params[:max_price]
       render json: ItemSerializer.new(Item.return_with_max_price(params[:max_price]))
+    elsif params[:name].nil?
+      render json: ErrorSerializer.new("You did not input any items to search for").serialize_json, status: 400
     end 
   end
 

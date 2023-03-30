@@ -85,7 +85,7 @@ RSpec.describe "Find_merchants", type: :request do
       parsed_merchant = JSON.parse(response.body, symbolize_names: true)
       expect(response).to have_http_status(400)
       expect(parsed_merchant).to be_a(Hash)
-      expect(parsed_merchant[:data][:errors]).to eq("You need to actually search for a merchant")
+      expect(parsed_merchant[:errors].first[:message]).to eq("You need to actually search for a merchant")
     end
 
     it "edgecase - parameter provided is empty" do 
@@ -97,7 +97,7 @@ RSpec.describe "Find_merchants", type: :request do
       parsed_merchant = JSON.parse(response.body, symbolize_names: true)
       expect(response).to have_http_status(400)
       expect(parsed_merchant).to be_a(Hash)
-      expect(parsed_merchant[:data][:errors]).to eq("Please input a valid search.")
+      expect(parsed_merchant[:errors].first[:message]).to eq("Please input a valid search.")
     end
   end 
 end 

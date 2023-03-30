@@ -7,12 +7,16 @@ class ErrorSerializer
 
   def serialize_json
     {
-      data: {
+      message: "Query cannot be completed", 
+      errors: [ 
+        {
         id: nil, 
-        type: "error_message", 
-        errors: @error_message, 
+        type: "error_message",
+        status: nil, 
+        message: @error_message, 
         attributes: {}
-      }
+        }
+      ]
     }
   end
 end
