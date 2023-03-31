@@ -3,7 +3,6 @@ class ErrorSerializer
   
   def initialize(error_message)
     @error_message = error_message
-    # @status = status
   end
 
   def serialize_json
